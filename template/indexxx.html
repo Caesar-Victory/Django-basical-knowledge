@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    这是通过blocksuper继承的父类：{{block.super}}<br>
+{% endblock %}
+{% block demo %}
+    这是通过include 引用的其他模板的内容：{% include 'ss.html' %}
+{% endblock %}

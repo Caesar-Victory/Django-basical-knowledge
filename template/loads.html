@@ -1,0 +1,14 @@
+{% load common_extras %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试自定义过滤器及标签</title>
+</head>
+<body>
+<p>展示自定义过滤器---转为小写</p>
+{{somevariable|mylower}}<br>
+<p>展示自定义过滤器---删除空格</p>
+{{somevariable|mycut:''}}<br>
+</body>
+</html>
