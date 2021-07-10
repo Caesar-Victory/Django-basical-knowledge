@@ -22,4 +22,5 @@ urlpatterns = [
     # path('detail/<int:num>/', views.mumu),  # 写了两个近似路径，是为了对同一个response设置不同的返回结果，根据用户的输入决定返回对象
     path('main_pag', views.index_4),
     path('', include('book.urls')),
+    path('', include('look.urls')),
 ]
