@@ -37,7 +37,8 @@ def common(request):
 
 
 def show_tag(request):
-    return render(request, 'show_tag.html')
+    #return render(request, 'show_tag.html')
+    return render(request, 'tbase.html')
 
 
 def index_01(request):
@@ -112,7 +113,7 @@ def add_book(request):
 
 
 def search_book(request):
-    user = User.objects.get(id=3)
-    user.bookinfo_set.all()
+    user = User.objects.get(id=1)
+    # user.bookinfo_set.clear()
     print(user)
     return HttpResponse("按照书籍id查询数据成功，书名为：{}".format(user))

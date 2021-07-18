@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Django default" uuid="31c7646a-1071-4e39-85d7-1abddbec308e">
-      <driver-ref>sqlite.xerial</driver-ref>
+    <data-source source="LOCAL" name="book" uuid="f872938d-4d88-4ded-9b58-c5047eec1eb4">
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/tzlook/settings.py</remarks>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\tylor\Desktop\duplicate\tzblog\Scripts\tzlook\db.sqlite3</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="@tz" uuid="d1cb4b1e-73a5-429a-a4df-ae7d0b5b7992">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/book</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/book</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

@@ -1,8 +1,9 @@
+from django.db.models import F, Q
 from django.shortcuts import render
 from django.http import HttpResponse  # 导入响应类
 import datetime
 from look.models import Student, Department
-
+from book.models import User
 
 # Create your views here.
 
@@ -51,6 +52,48 @@ def add_student(request):
     """
     添加学生信息
     """
-    st = Student(s_id=1, s_name='张三',department_id=1)  # , department_id=1
+    st = Student(s_id=1, s_name='张三', department_id=1)  # , department_id=1
     st.save()
     return HttpResponse('添加学生张三，id为1,成功！')
+
+
+def research_by_filter(request):
+    dat = Department.objects.filter(student__s_id=1)
+    print(dat)
+    print("在学院表中查询学号为1的学生：{}".format(dat))
+    return HttpResponse("得偿所愿")
+
+
+def research_by_filter2(request):
+    dat = Student.objects.filter(department__d_id=3)
+    print(dat)
+    print("在学生表中查询学号为1的学生：{}".format(dat))
+    return HttpResponse("得偿所愿")
+
+
+def main_site(request):
+    return render(request, 'base/base1.html')
+
+
+def id_request(request):
+    outcome = Student.objects.filter(department_id__lt=F('s_id'))
+    print(outcome)
+    return HttpResponse("查询学院ID小于学生学号的数据对象：查询成功")
+
+def add_age(request):
+    consequence = User.objects.all().update(age=F('age') +1)
+    print(consequence)
+    return HttpResponse("为每个学生的年龄增加一，使用F查询方法。")
+
+
+def alternative(request):
+    ob = User.objects.filter(Q(name='张三') | Q(name='王九'))
+    print(ob)
+    return HttpResponse("使用Q查询，张三或者王九，二者择其一")
+
+
+def alternative_different_field(request):
+    ob = User.objects.filter(Q(name='李四')&Q(age=17))
+    print(ob)
+    print(type(ob))
+    return render(request, 'loads.html', context={'ob':ob})

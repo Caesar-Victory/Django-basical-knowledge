@@ -18,7 +18,7 @@ class Department(models.Model):
 class Student(models.Model):
     s_id = models.AutoField(primary_key=True)  # 允许自定义学生ID
     s_name = models.CharField(max_length=20)  # 学生名字的最大长度为20
-    department = models.ForeignKey('Department', related_name='student', on_delete=models.CASCADE)
+    department = models.ForeignKey('Department', related_name='student', on_delete=models.CASCADE)  # 设置外键关联
 
     class Meta:
         db_table = 'student'

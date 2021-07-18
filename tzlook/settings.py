@@ -10,12 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
-
+import os, sys
+# 追加导包路径--->让程序在文件夹中寻找app
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 print(BASE_DIR)
-
+# 告诉配置文件，到apps下寻找子应用
+sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -40,6 +41,10 @@ INSTALLED_APPS = [
     'look.apps.LookConfig',
     'book.apps.BookConfig',
     'common',
+    'user',
+    'doc',
+    'news',
+    'course',
 ]
 
 MIDDLEWARE = [
