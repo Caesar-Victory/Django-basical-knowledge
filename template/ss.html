@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>内容</title>
+    <title>文件上传</title>
 </head>
 <body>
-<h1>潭州教育python学院 Djano框架班</h1>
-<h1>对文件进行修改</h1>
+<form method="post" action="#" enctype="multipart/form-data">{% csrf_token %}
+    <input type="file" name="file"><br>
+    <input type="submit" name="上传"><br>
+
+</form>
 </body>
 </html>

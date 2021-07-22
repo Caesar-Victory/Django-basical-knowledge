@@ -28,7 +28,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+#  设置上传文件夹地址
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 # Application definition
 
 INSTALLED_APPS = [

@@ -16,11 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from tzlook import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('detail/', views.mumu),
     # path('detail/<int:num>/', views.mumu),  # 写了两个近似路径，是为了对同一个response设置不同的返回结果，根据用户的输入决定返回对象
-    path('main_pag', views.index_4),
+    path('main_pag/', views.index_4),
     path('', include('book.urls')),
     path('', include('look.urls')),
+    path('get_test/', views.get_test),  # 测试Get方法,服务器获取浏览器输入的值
+    path('req_test/', views.req_test),  # 测试Get方法，渲染整个HTML5
+    path('post_test/', views.post_test),  # 测试Get方法，同时处理两种请求
+    path('clas_add/', views.BlogAdd.as_view(), name = "clas_add"),  # django.db.Views重构
+    path('upload_test/', views.upload_test, name = "upload_test"),  # 文件上传
 ]
