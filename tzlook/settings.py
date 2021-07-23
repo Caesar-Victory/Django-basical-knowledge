@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os, sys
+
 # 追加导包路径--->让程序在文件夹中寻找app
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,6 +21,7 @@ sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!q)ot-pausiu3rxcfhe$cj&e!rbjdn$@9zfzn)&ss44a5bh*(v'
 
@@ -28,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-#  设置上传文件夹地址
+# 设置上传文件夹地址
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -82,21 +84,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tzlook.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',               # 数据库引擎
-        'NAME': 'book',                                     #数据库名称
-        'USER': 'tz',                                       # 链接数据库的用户名
-        'PASSWORD': 'tz123',                                # 链接数据库的密码
-        'HOST': '127.0.0.1',                                # mysql服务器的域名和ip地址
-        'PORT': '3306',                                     # mysql的一个端口号,默认是3306
+        'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+        'NAME': 'book',  # 数据库名称
+        'USER': 'tz',  # 链接数据库的用户名
+        'PASSWORD': 'tz123',  # 链接数据库的密码
+        'HOST': '127.0.0.1',  # mysql服务器的域名和ip地址
+        'PORT': '3306',  # mysql的一个端口号,默认是3306
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -116,7 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -129,7 +128,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

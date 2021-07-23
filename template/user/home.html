@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+</head>
+<body>
+您好！ {{ username }}<br>
+<h5>views下home1类</h5>
+<a href="{% url 'home1' %}">登录</a>
+<h5>用模板标签定向函数</h5>
+<a href="{% url 'logout' %}">退出</a>
+</body>
+</html>

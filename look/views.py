@@ -4,7 +4,7 @@ from django.http import HttpResponse  # 导入响应类
 import datetime
 from look.models import Student, Department
 from book.models import User
-
+from look.forms import AddForm
 # Create your views here.
 
 def index(request, object):
@@ -97,3 +97,14 @@ def alternative_different_field(request):
     print(ob)
     print(type(ob))
     return render(request, 'loads.html', context={'ob':ob})
+
+def add_form(request):
+    if request.method == 'POST':
+        form = AddForm(request.POST)
+        if form.is_valid():
+            a = form.cleand_data['a']
+            b = form.cleand_data['b']
+            return HttpResponse(str(int(a)) + str(int(b)))
+        else:
+            form = AddForm()
+    return render(request, 'user/add_form.html')

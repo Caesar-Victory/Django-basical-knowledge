@@ -27,6 +27,12 @@ urlpatterns = [
     path('get_test/', views.get_test),  # 测试Get方法,服务器获取浏览器输入的值
     path('req_test/', views.req_test),  # 测试Get方法，渲染整个HTML5
     path('post_test/', views.post_test),  # 测试Get方法，同时处理两种请求
-    path('clas_add/', views.BlogAdd.as_view(), name = "clas_add"),  # django.db.Views重构
-    path('upload_test/', views.upload_test, name = "upload_test"),  # 文件上传
+    path('clas_add/', views.BlogAdd.as_view(), name="clas_add"),  # django.db.Views重构
+    path('upload_test/', views.upload_test, name="upload_test"),  # 文件上传
+    path('set_cookie/', views.set_cookie, name="set_cookie"),  # 设置cookies
+    path('get_cookies/', views.get_cookies, name="get_cookies"),  # 获取cookies
+    path('delete_ck/', views.delete_ck, name="delete_ck"),  # 删除cookies
+    path('home1/', views.home1, name="home1"),
+    path('login/', views.login, name="login"),
+    path('logout/', views.logout, name="logout"),
 ]
