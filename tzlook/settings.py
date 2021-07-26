@@ -62,6 +62,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',  # 验证用户身份的认证中间件
     'django.contrib.messages.middleware.MessageMiddleware',  # 用来支持消息应用的中间件
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'tzlook.look.mymiddleware.MyException',
+    # 'tzlook.look.e.UserMiddware',
 ]
 
 ROOT_URLCONF = 'tzlook.urls'
@@ -119,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
 TIME_ZONE = 'Asia/Shanghai'
 

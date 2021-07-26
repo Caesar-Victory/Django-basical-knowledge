@@ -1,5 +1,4 @@
-from django.contrib import admin
-from django.urls import include, path, re_path
+from django.urls import path, re_path
 from . import views  # url匹配成功则需要进入views视图给请求提供相应
 
 urlpatterns = [
@@ -17,6 +16,9 @@ urlpatterns = [
     path("id_request/", views.id_request, name='id_request'),  # 查询学院ID小于学生学号的数据对象：查询成功，使用F查询方法。
     path("add_age/", views.add_age, name='add_age'),  # 为每个学生的年龄增加一，使用F查询方法。
     path("alternative/", views.alternative, name='alternative'),  # 使用Q查询，张三或者王九，二者择其一。
-    path("alternative_different_field/", views.alternative_different_field, name='alternative_different_field'),  # 使用Q查询，实现两种不同字段的二选一查询。
+    # 使用Q查询，实现两种不同字段的二选一查询。
+    path("alternative_different_field/", views.alternative_different_field, name='alternative_different_field'),
+    path('login_auth/', views.login_auth, name="login_auth"),  # 使用user表创建登录页面
+    path('logout_auth/', views.logout_auth, name="login_auth"),  # 使用user表创建退出页面
 
 ]

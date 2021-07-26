@@ -1,10 +1,14 @@
 from django.db.models import F, Q
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse  # 导入响应类
 import datetime
 from look.models import Student, Department
 from book.models import User
-from look.forms import AddForm
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User, Permission, Group
+# from look.forms import AddForm
+
+
 # Create your views here.
 
 def index(request, object):
@@ -80,8 +84,9 @@ def id_request(request):
     print(outcome)
     return HttpResponse("查询学院ID小于学生学号的数据对象：查询成功")
 
+
 def add_age(request):
-    consequence = User.objects.all().update(age=F('age') +1)
+    consequence = User.objects.all().update(age=F('age') + 1)
     print(consequence)
     return HttpResponse("为每个学生的年龄增加一，使用F查询方法。")
 
@@ -93,18 +98,45 @@ def alternative(request):
 
 
 def alternative_different_field(request):
-    ob = User.objects.filter(Q(name='李四')&Q(age=17))
+    ob = User.objects.filter(Q(name='李四') & Q(age=17))
     print(ob)
     print(type(ob))
-    return render(request, 'loads.html', context={'ob':ob})
+    return render(request, 'loads.html', context={'ob': ob})
 
-def add_form(request):
-    if request.method == 'POST':
-        form = AddForm(request.POST)
-        if form.is_valid():
-            a = form.cleand_data['a']
-            b = form.cleand_data['b']
-            return HttpResponse(str(int(a)) + str(int(b)))
-        else:
-            form = AddForm()
-    return render(request, 'user/add_form.html')
+
+# def add_form(request):
+#     if request.method == 'POST':
+#         form = AddForm(request.POST)
+#         if form.is_valid():
+#             a = form.cleand_data['a']
+#             b = form.cleand_data['b']
+#             return HttpResponse(str(int(a)) + str(int(b)))
+#         else:
+#             form = AddForm()
+#     return render(request, 'user/add_form.html')
+
+
+def login_auth(request):
+    if request.method == 'GET':
+        return render(request, 'user/login2.html')
+    elif request.method == 'POST':
+        username = request.POST.get('username')
+        # 使用session状态保持
+        # request.session['username'] = username
+        # request.session.set_expiry(None)
+        # 重定向
+        login(request, username)
+        return redirect(reverse('home1'))
+
+
+def home1(request):
+    username = request.session.get('username', '未登录')
+    return render(request, 'user/home.html', context={'username':username})
+
+
+def logout_auth(request):
+    # 退出登录的逻辑
+    # 1. 退出状态，在session
+    # request.session.flush()
+    logout(request)
+    return redirect(reverse('home1'))

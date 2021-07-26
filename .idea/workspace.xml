@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4339b9ff-5ed6-4488-a4d2-aa3e0f660699" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/look/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/add_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/login2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/look/e.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/look/mymiddleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/tzlook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tzlook.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/book/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/look/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/look/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/look/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/look/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/look/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/look/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/look/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/look/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tzlook/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tzlook/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tzlook/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tzlook/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tzlook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tzlook/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tzlook/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/tzlook/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +60,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="tzlook" type="Python.DjangoServer" factoryName="Django server">
@@ -115,6 +116,17 @@
       <workItem from="1626995501917" duration="2302000" />
       <workItem from="1626999527244" duration="12453000" />
       <workItem from="1627030825537" duration="2152000" />
+      <workItem from="1627052571386" duration="844000" />
+      <workItem from="1627085901927" duration="9280000" />
+      <workItem from="1627172871074" duration="2380000" />
+      <workItem from="1627175546138" duration="4362000" />
+      <workItem from="1627197659845" duration="2252000" />
+      <workItem from="1627205306138" duration="1484000" />
+      <workItem from="1627207006672" duration="749000" />
+      <workItem from="1627208814401" duration="2446000" />
+      <workItem from="1627214948591" duration="6041000" />
+      <workItem from="1627256715430" duration="2057000" />
+      <workItem from="1627261375244" duration="627000" />
     </task>
     <servers />
   </component>
